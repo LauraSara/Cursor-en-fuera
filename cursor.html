@@ -1,0 +1,76 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En/Fuera</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style>
+  .perrito{
+    width: 200px;
+    height: 200px;
+    border: 20px double salmon;
+  }
+  .perrito2{
+    width: 200px;
+    height: 200px;
+    border: 20px double skyblue;
+  }
+  .perrito3{
+    width: 200px;
+    height: 200px;
+    border: 20px double orange;
+  }
+  div{    
+    display: inline;
+    margin: 50px;    
+  }
+  .container{
+    margin-left: 100px;
+  }
+</style>
+<body>
+  <div class="container">
+    <div>
+      <img class="perrito" src="1.jpg" data-src="5.jpg"> 
+    </div>        
+    <div>
+      <img class="perrito2" src="2.jpg" data-src="4.jpg">
+    </div>     
+    <div>
+      <img class="perrito3" src="6.jpg" data-src="3.jpg">
+    </div>   
+  </div>    
+
+  <script>
+    $( document ).ready(function() {
+      $('img').hover(function() {
+      var img1 = $(this).attr('src');
+      var temp = $(this).attr('data-src');
+        $(this).attr('src', temp);
+        $(this).attr('data-src',img1);
+      });  //PRINCIPAL
+
+      $('img').hover(function(){
+      $('.perrito',this).fadeOut();
+      }, function(){
+      $('.perrito',this).fadeIn();
+      });
+
+      $('img').hover(function(){
+      $('.perrito2',this).fadeOut();
+      }, function(){
+      $('.perrito2',this).fadeIn();
+      });
+
+      $('img').hover(function(){
+      $('.perrito3',this).fadeOut();
+      }, function(){
+      $('.perrito3',this).fadeIn();
+      });
+  });
+  </script>
+</body>
+</html>
